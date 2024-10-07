@@ -1,0 +1,29 @@
+{
+  "rat_idle": {
+    "sounds": [
+      {
+        "name": "mattscritters:rat_idle",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "rat_walk": {
+    "sounds": [
+      {
+        "name": "mattscritters:rat_walk",
+        "volume": 0.7,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "rat_hit": {
+    "sounds": [
+      {
+        "name": "mattscritters:rat_hit",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  }
+}
