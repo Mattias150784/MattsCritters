@@ -3,8 +3,9 @@ package net.mattias.mattscritters.entity.variant;
 
 public enum RatVariant {
     WHITE(0),
-    GRAY(1);
-    // BLACK(2) // Uncomment if you want to add a black variant
+    GRAY(1),
+    BLACK(2),
+    BROWN(3);
 
     private final int id;
 

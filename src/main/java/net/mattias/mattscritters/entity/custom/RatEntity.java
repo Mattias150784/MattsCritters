@@ -13,7 +13,6 @@ import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -29,7 +28,7 @@ public class RatEntity extends Animal {
     private RatVariant variant;
     public RatEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
-        this.setVariant(this.random.nextInt(2));
+        this.setVariant(this.random.nextInt(4));
     }
 
     public RatVariant getVariant() {
@@ -40,7 +39,7 @@ public class RatEntity extends Animal {
         this.variant = RatVariant.byId(id);
     }
 
-    // Override the save/load method to store variant in NBT data
+
     @Override
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
@@ -50,8 +49,10 @@ public class RatEntity extends Animal {
         switch (this.getVariant()) {
             case GRAY:
                 return "textures/entity/gray_rat.png";
-            // case BLACK:
-            //     return "textures/entity/rat/rat_black.png"; // Uncomment if adding black variant
+             case BLACK:
+                return "textures/entity/black_rat.png";
+            case BROWN:
+                return "textures/entity/brown_rat.png";
             case WHITE:
             default:
                 return "textures/entity/white_rat.png";
