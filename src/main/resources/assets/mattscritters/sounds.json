@@ -25,5 +25,32 @@
         "pitch": 1.0
       }
     ]
+  },
+  "pangolin_idle": {
+    "sounds": [
+      {
+        "name": "mattscritters:pangolin_idle",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "pangolin_walk": {
+    "sounds": [
+      {
+        "name": "mattscritters:pangolin_walk",
+        "volume": 0.7,
+        "pitch": 1.0
+      }
+    ]
+  },
+  "pangolin_hit": {
+    "sounds": [
+      {
+        "name": "mattscritters:pangolin_hit",
+        "volume": 1.0,
+        "pitch": 1.0
+      }
+    ]
   }
 }

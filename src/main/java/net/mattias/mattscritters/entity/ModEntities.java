@@ -1,6 +1,7 @@
 package net.mattias.mattscritters.entity;
 
 import net.mattias.mattscritters.MattsCritters;
+import net.mattias.mattscritters.entity.custom.PangolinEntity;
 import net.mattias.mattscritters.entity.custom.RatEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -19,6 +20,12 @@ public static final RegistryObject<EntityType<RatEntity>> RAT =
                 .sized(1f, 1f)
                 .clientTrackingRange(4)
                 .build("rat"));
+
+    public static final RegistryObject<EntityType<PangolinEntity>> PANGOLIN =
+            ENTITY_TYPES.register("pangolin", () -> EntityType.Builder.of(PangolinEntity::new, MobCategory.CREATURE)
+                    .sized(1f, 1f)
+                    .clientTrackingRange(4)
+                    .build("pangolin"));
 
 
 

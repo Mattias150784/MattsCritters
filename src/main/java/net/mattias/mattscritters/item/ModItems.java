@@ -28,6 +28,10 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.RAT, 0xb0a4a4, 0x65e5e,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> PANGOLIN_SPAWN_EGG = ITEMS.register("pangolin_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.PANGOLIN, 0x472e0b, 0x59390c,
+                    new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

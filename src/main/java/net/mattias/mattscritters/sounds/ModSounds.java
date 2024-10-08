@@ -16,6 +16,10 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> RAT_WALK = registerSoundEvents("rat_walk");
     public static final RegistryObject<SoundEvent> RAT_HIT = registerSoundEvents("rat_hit");
 
+    public static final RegistryObject<SoundEvent> PANGOLIN_IDLE = registerSoundEvents("pangolin_idle");
+    public static final RegistryObject<SoundEvent> PANGOLIN_WALK = registerSoundEvents("pangolin_walk");
+    public static final RegistryObject<SoundEvent> PANGOLIN_HIT = registerSoundEvents("pangolin_hit");
+
     private static RegistryObject<SoundEvent> registerSoundEvents(String name) {
         return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MattsCritters.MOD_ID, name)));
     }

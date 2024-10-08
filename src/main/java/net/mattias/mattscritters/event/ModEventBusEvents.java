@@ -17,11 +17,18 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.RAT.get(), RatEntity.createAttributes().build());
+        event.put(ModEntities.PANGOLIN.get(), RatEntity.createAttributes().build());
     }
 
     @SubscribeEvent
     public static void registerSpawnPlacement(SpawnPlacementRegisterEvent event) {
         event.register(ModEntities.RAT.get(),
+                SpawnPlacements.Type.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                Animal::checkAnimalSpawnRules,
+                SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.PANGOLIN.get(),
                 SpawnPlacements.Type.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 Animal::checkAnimalSpawnRules,

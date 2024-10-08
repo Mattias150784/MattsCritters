@@ -2,6 +2,7 @@ package net.mattias.mattscritters;
 
 import com.mojang.logging.LogUtils;
 import net.mattias.mattscritters.entity.ModEntities;
+import net.mattias.mattscritters.entity.client.PangolinRenderer;
 import net.mattias.mattscritters.entity.client.RatRenderer;
 import net.mattias.mattscritters.item.ModCreativeModTabs;
 import net.mattias.mattscritters.item.ModItems;
@@ -69,6 +70,7 @@ public class MattsCritters
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             EntityRenderers.register(ModEntities.RAT.get(), RatRenderer::new);
+            EntityRenderers.register(ModEntities.PANGOLIN.get(), PangolinRenderer::new);
 
 
         }
