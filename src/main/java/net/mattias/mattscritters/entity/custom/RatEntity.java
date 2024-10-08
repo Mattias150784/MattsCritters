@@ -1,9 +1,11 @@
 package net.mattias.mattscritters.entity.custom;
 
 import net.mattias.mattscritters.entity.ModEntities;
+import net.mattias.mattscritters.entity.variant.RatVariant;
 import net.mattias.mattscritters.item.ModItems;
 import net.mattias.mattscritters.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
@@ -24,10 +26,42 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 public class RatEntity extends Animal {
-    public RatEntity(EntityType<? extends Animal> p_27557_, Level p_27558_) {
-        super(p_27557_, p_27558_);
+    private RatVariant variant;
+    public RatEntity(EntityType<? extends Animal> entityType, Level level) {
+        super(entityType, level);
+        this.setVariant(this.random.nextInt(2));
     }
 
+    public RatVariant getVariant() {
+        return this.variant;
+    }
+
+    public void setVariant(int id) {
+        this.variant = RatVariant.byId(id);
+    }
+
+    // Override the save/load method to store variant in NBT data
+    @Override
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putInt("Variant", this.variant.getId());
+    }
+    public String getVariantTexture() {
+        switch (this.getVariant()) {
+            case GRAY:
+                return "textures/entity/gray_rat.png";
+            // case BLACK:
+            //     return "textures/entity/rat/rat_black.png"; // Uncomment if adding black variant
+            case WHITE:
+            default:
+                return "textures/entity/white_rat.png";
+        }
+    }
+    @Override
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        this.setVariant(compound.getInt("Variant"));
+    }
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
@@ -91,7 +125,9 @@ public class RatEntity extends Animal {
     @Nullable
     @Override
     public AgeableMob getBreedOffspring(ServerLevel serverLevel, AgeableMob ageableMob) {
-        return ModEntities.RAT.get().create(serverLevel);
+        RatEntity babyRat = ModEntities.RAT.get().create(serverLevel);
+        babyRat.setVariant(this.random.nextInt(2));  // Randomize the variant for offspring
+        return babyRat;
     }
 
     @Override

@@ -19,6 +19,8 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.matts_critters"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.CHEESE.get());
+                        pOutput.accept(ModItems.DEAD_RAT.get());
+                        pOutput.accept(ModItems.COOKED_RAT.get());
                         pOutput.accept(ModItems.RAT_SPAWN_EGG.get());
 
                     })

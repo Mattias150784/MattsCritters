@@ -14,8 +14,8 @@ public class RatRenderer extends MobRenderer<RatEntity, RatModel<RatEntity>> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(RatEntity ratEntity) {
-        return new ResourceLocation(MattsCritters.MOD_ID, "textures/entity/white_rat.png");
+    public ResourceLocation getTextureLocation(RatEntity rat) {
+        return new ResourceLocation("mattscritters", rat.getVariantTexture());
     }
 
     @Override
@@ -28,4 +28,6 @@ if(pEntity.isBaby()) {
 
         super.render(pEntity, pEntityYaw, pPartialTicks, pMatrixStack, pBuffer, pPackedLight);
     }
+
+
 }

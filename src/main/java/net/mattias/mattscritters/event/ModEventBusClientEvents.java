@@ -14,4 +14,5 @@ public class ModEventBusClientEvents {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.RAT_LAYER, RatModel::createBodyLayer);
     }
+
 }
