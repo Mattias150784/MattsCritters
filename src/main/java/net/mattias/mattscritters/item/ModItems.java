@@ -32,6 +32,8 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.PANGOLIN, 0x472e0b, 0x59390c,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> PANGOLIN_SCUTE = ITEMS.register("pangolin_scute",
+            () -> new Item(new Item.Properties()));
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

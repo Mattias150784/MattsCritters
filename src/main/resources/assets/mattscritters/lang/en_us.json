@@ -3,6 +3,8 @@
   "item.mattscritters.dead_rat": "Dead Rat",
   "item.mattscritters.cooked_rat": "Cooked Rat",
   "item.mattscritters.rat_spawn_egg": "Rat Spawn Egg",
+  "item.mattscritters.pangolin_spawn_egg": "Pangolin Spawn Egg",
+  "item.mattscritters.pangolin_scute": "Pangolin Scute",
 
   "creativetab.matts_critters": "Matts Critters"
 }

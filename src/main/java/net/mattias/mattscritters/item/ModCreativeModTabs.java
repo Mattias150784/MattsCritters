@@ -22,7 +22,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.DEAD_RAT.get());
                         pOutput.accept(ModItems.COOKED_RAT.get());
                         pOutput.accept(ModItems.RAT_SPAWN_EGG.get());
-
+                        pOutput.accept(ModItems.PANGOLIN_SPAWN_EGG.get());
+                        pOutput.accept(ModItems.PANGOLIN_SCUTE.get());
                     })
                     .build());
 

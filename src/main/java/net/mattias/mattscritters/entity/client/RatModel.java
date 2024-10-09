@@ -85,8 +85,8 @@ public class RatModel<T extends Entity> extends HierarchicalModel<T> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
-		this.animateWalk(ModAnimationDefinitions.Walk, limbSwing, limbSwingAmount, 2F, 2.5F);
-		this.animate(((RatEntity) entity).idleAnimationState, ModAnimationDefinitions.Idle, ageInTicks, 1f);
+		this.animateWalk(ModAnimationDefinitions.RatWalk, limbSwing, limbSwingAmount, 2F, 2.5F);
+		this.animate(((RatEntity) entity).idleAnimationState, ModAnimationDefinitions.RatIdle, ageInTicks, 1f);
 	}
 	private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {
 		pNetHeadYaw = Mth.clamp(pNetHeadYaw, -30.0F, 30.0F);
